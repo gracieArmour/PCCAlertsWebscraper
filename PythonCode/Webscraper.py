@@ -1,16 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
-#import argparse
+import argparse
 
 # grab arguments from command line
-#parser = argparse.ArgumentParser(description='Regularly check for a change in the first paragraph tag of a webpage')
-#parser.add_argument('webpage', metavar='url', type=str, help='url to check')
+parser = argparse.ArgumentParser(description='Regularly check for a change in the first paragraph tag of a webpage')
+parser.add_argument('webpage', metavar='url', type=str, help='url to check')
 
-#args = parser.parse_args()
+args = parser.parse_args()
 
 
 # passing arguments from command line to variables
-url = "https://www.google.com"
+url = args.url
 
 
 # scraper, grabs webpage only
@@ -26,13 +26,5 @@ def scrape():
         #print("Contents: "+str(soup))
     else:
         print("Error code: " + str(page.status_code) + " Page not accessible")
-    return NULL
+    return soup
 
-# actual prossessing of webpage data into useful info
-def magic():
-    scrape()
-    
-    
-    return NULL
-
-magic()
