@@ -1,16 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-import argparse
-
-# grab arguments from command line
-parser = argparse.ArgumentParser(description='Regularly check for a change in the first paragraph tag of a webpage')
-parser.add_argument('webpage', metavar='url', type=str, help='url to check')
-
-args = parser.parse_args()
 
 
-# passing arguments from command line to variables
-url = args.url
+# getting url from user input
+url = input("URL to check: ")
 
 
 # scraper, grabs webpage only
