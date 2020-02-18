@@ -11,21 +11,32 @@ sleep_time = 24 * 60 * 60 # 24 hours in seconds
 # scraper, grabs webpage only
 def scrape(url):
     
-    page = requests.get(url)
+    try:
+        page = requests.get(url)
     
-    if page.status_code==200:
-        pageStatus = "Page Accessed!"
-        soup = BeautifulSoup(page.content, 'html.parser')
-        divs = soup.find_all('div')
-        statusContainer = divs[2]
-        pTags = statusContainer.find_all('p')
-        statusText = pTags[2].get_text()
-        print(statusText)
-    else:
-        pageStatus = f"Error code: {page.status_code}, page not accessible"
+        if page.status_code==200:
+            pageStatus = "Page Accessed!"
+            soup = BeautifulSoup(page.content, 'html.parser')
+            tags = [str(tag) for tag in soup.find_all()]
+            index = 0
+            for i in tags:
+                index = index + 1
+                if ("Current status" in i):
+                    statusTag = tags[index]
+                    statusText = statusTag.split('>')[1].split('<')[0]
+            if not('statusText' in locals()):
+                statusText = "Status Header not found"
+        else:
+            pageStatus = f"Error code: {page.status_code}, page not accessible"
+            statusText = "Page was not accessed, no text retrieved"
+    except:
+        pageStatus = "Connection to page failed"
         statusText = "Page was not accessed, no text retrieved"
-    print(pageStatus)
-    return pageStatus, statusText
+    finally:
+        print(pageStatus)
+        print(statusText)
+        return pageStatus, statusText
+        
 
 # run always, check once per day
 while True:
