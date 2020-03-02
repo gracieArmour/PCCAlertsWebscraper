@@ -13,7 +13,7 @@ def scrape(url):
             soup = BeautifulSoup(page.content, 'html.parser')
             tags = [str(tag) for tag in soup.find_all()]
             for i,content in enumerate(tags):
-                if ("current status" in content.lower()):
+                if (("current status" in content.lower()) and ("h3" in content.lower())):
                     statusTag = tags[i+1]
                     statusText = statusTag.split('>')[1].split('<')[0]
             if not('statusText' in locals()):
