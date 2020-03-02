@@ -21,15 +21,8 @@ def scrape(url):
         else:
             pageStatus = f"Error code: {page.status_code}, page not accessible"
             statusText = "Page was not accessed, no text retrieved"
-    except KeyboardInterrupt:
-        print("Program ended by user")
-        if not('pageStatus' in locals()):
-            pageStatus = "Program ended without retrieving page"
-        if not('statusText' in locals()):
-            statusText = "Program ended without retrieving page"
-        raise
-    except:
-        pageStatus = "Connection to page failed"
+    except Exception as e:
+        pageStatus = "Connection to page failed. Error: "+repr(e)
         statusText = "Page was not accessed, no text retrieved"
     finally:
         print(pageStatus)
