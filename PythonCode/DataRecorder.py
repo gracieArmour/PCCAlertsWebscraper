@@ -18,11 +18,9 @@ def scrape(url):
             pageStatus = "Page Accessed!"
             soup = BeautifulSoup(page.content, 'html.parser')
             tags = [str(tag) for tag in soup.find_all()]
-            index = 0
-            for i in tags:
-                index = index + 1
-                if ("Current status" in i):
-                    statusTag = tags[index]
+            for i,content in enumerate(tags):
+                if ("current status" in content.lower()):
+                    statusTag = tags[i+1]
                     statusText = statusTag.split('>')[1].split('<')[0]
             if not('statusText' in locals()):
                 statusText = "Status Header not found"
