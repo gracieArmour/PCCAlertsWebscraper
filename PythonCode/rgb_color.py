@@ -3,7 +3,7 @@ import pyfirmata
 
 def rgb_color(led,color=[0,0,0]):
     if not('led_list' in globals()):
-        led_list = []
+        global led_list = []
     
     if not(led in led_list):
         led_list.append(led)
