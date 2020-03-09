@@ -1,9 +1,9 @@
 import pyfirmata
 
-
-def rgb_color(led,color=[0,0,0]):
+def set_led(led,color=[0,0,0]):
     if not('led_list' in globals()):
-        global led_list = []
+        global led_list
+        led_list = []
     
     if not(led in led_list):
         led_list.append(led)
@@ -41,4 +41,3 @@ def rgb_color(led,color=[0,0,0]):
     led[0].write(rgb_list[0]/255)
     led[1].write(rgb_list[1]/255)
     led[2].write(rgb_list[2]/255)
-
