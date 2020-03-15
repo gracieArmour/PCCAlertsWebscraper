@@ -8,7 +8,7 @@ from webscraper import scrape
 from statuschecker import status_check
 
 # tell the program what website to scrape from
-url_to_check = 'https://jackiearmour.github.io/PCCAlertsWebscraper/'
+url_to_check = 'https://alert.pcc.edu/' #'https://jackiearmour.github.io/PCCAlertsWebscraper/'
 
 # store the name of the USB port the Arduino is connected to
 portName = '/dev/cu.usbserial-DN02SJR4'
