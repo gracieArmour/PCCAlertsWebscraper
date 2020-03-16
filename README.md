@@ -1,11 +1,6 @@
-# PCCAlertsWebscraper
-A Python/Arduino webscraping project that lights up LEDs based on data from the Portland Community College Alerts system.
+Authors: Jackie Armour, Natalia Creagh, Daniel Maestas
 
-Jackie Armour, Natalia Creagh, Daniel Maestas
-
-Winter ENGR114
-
-3/15/2020
+Course: ENGR114 Winter 2020
 
 # Arduino Predicts Impending Disaster
 
