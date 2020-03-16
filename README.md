@@ -2,8 +2,11 @@
 A Python/Arduino webscraping project that lights up LEDs based on data from the Portland Community College Alerts system.
 
 Jackie Armour, Natalia Creagh, Daniel Maestas
+
 Winter ENGR114
+
 3/15/2020
+
 # Arduino Predicts Impending Disaster
 
 ## Problem Statement:
@@ -16,137 +19,39 @@ Our group was tasked with web scraping the PCC Alert Page to find alerts and pre
 
 ## Hardware Setup:
 ### Bill of Materials
-Part Name
-Purpose
-Item Name
-URL
-Price
-DEV-13975	
-Takes code and installs it into breadboard
-SparkFun RedBoard - Programmed with Arduino
-https://www.sparkfun.com/products/13975
-$  19.95
-DEV-11235
-Holds Arduino and Breadboard
-Arduino and Breadboard Holder
-https://www.sparkfun.com/products/11235
-$    3.95
-CAB-11301
-Connects computer to RedBoard
-SparkFun USB Mini-B Cable - 6 Foot
-https://www.sparkfun.com/products/11301
-$    3.95
-COM-12062
-Indicate alerts
-LED - Assorted (20 pack)
-https://www.sparkfun.com/products/12062
-$    2.95
-COM-11507
-Reduces current flow
-Resistor 330 Ohm 1/6 Watt PTH - 20 pack
-https://www.sparkfun.com/products/11507
-$    0.95
-COM-11508
-Reduces current flow
-Resistor 10K Ohm 1/6th Watt PTH - 20 pack
-https://www.sparkfun.com/products/11508
-$    0.95
+| Part Name | Purpose | Item Name | URL | Price |
+|----|----|----|----|----|
+| DEV-13975	| Takes code and installs it into breadboard | SparkFun RedBoard - Programmed with Arduino | https://www.sparkfun.com/products/13975 | $19.95 |
+| DEV-11235 | Holds Arduino and Breadboard | Arduino and Breadboard Holder | https://www.sparkfun.com/products/11235 | $3.95 |
+| CAB-11301 | Connects computer to RedBoard | SparkFun USB Mini-B Cable - 6 Foot | https://www.sparkfun.com/products/11301 | $3.95 |
+| COM-12062 | Indicate alerts | LED - Assorted (20 pack) | https://www.sparkfun.com/products/12062 | $2.95 |
+| COM-11507 | Reduces current flow | Resistor 330 Ohm 1/6 Watt PTH - 20 pack | https://www.sparkfun.com/products/11507 | $0.95 |
+| COM-11508 | Reduces current flow | Resistor 10K Ohm 1/6th Watt PTH - 20 pack | https://www.sparkfun.com/products/11508 | $0.95 |
 
 ### Hardware Schematic
 
 ![Hardware Schematic](READMEImages/hardwarediagram.png)
 
 ### Hookup Guide
-Part
-Pin
-Connector
-Pin
-Part
-Redboard
-GRND
-Black Wire
--
-Breadboard
-Redboard
-12
-Blue Wire
-a28
-Breadboard
-Redboard
-11
-Green Wire
-a29
-Breadboard
-Redboard
-10
-Red Wire
-a30
-Breadboard
-Redboard
-8
-Blue Wire
-a8
-Breadboard
-Redboard
-7
-Green Wire
-a9
-Breadboard
-Redboard
-6
-Red Wire
-a7
-Breadboard
-Redboard
-a3
-Black Wire
--
-Breadboard
-Redboard
-a25
-Black Wire
--
-Breadboard
-Breadboard
-b2
-White LED
-b3,b4,b5
-Breadboard
-Breadboard
-c5
-Resistor
-c9
-Breadboard
-Breadboard
-d4
-Resistor
-d8
-Breadboard
-Breadboard
-e2
-Resistor
-e7
-Breadboard
-Breadboard
-a24
-White LED
-b25,b26,b27
-Breadboard
-Breadboard
-c27
-Resistor
-c30
-Breadboard
-Breadboard
-d26
-Resistor
-d29
-Breadboard
-Breadboard
-e24
-Resistor
-e28
-Breadboard
+| Part | Pin | Connector | Pin | Part |
+|----|----|----|----|----|
+| Redboard | GRND | Black Wire | - | Breadboard |
+| Redboard | 12 | Blue Wire | a28 | Breadboard |
+| Redboard | 11 | Green Wire | a29 | Breadboard |
+| Redboard | 10 | Red Wire | a30 | Breadboard |
+| Redboard | 8 | Blue Wire | a8 | Breadboard |
+| Redboard | 7 | Green Wire | a9 | Breadboard |
+| Redboard | 6 | Red Wire | a7 | Breadboard |
+| Redboard | a3 | Black Wire | - | Breadboard |
+| Redboard | a25 | Black Wire | - | Breadboard |
+| Breadboard | b2 | White LED | b3,b4,b5 | Breadboard |
+| Breadboard | c5 | Resistor | c9 | Breadboard |
+| Breadboard | d4 | Resistor | d8 | Breadboard |
+| Breadboard | e2 | Resistor | e7 | Breadboard |
+| Breadboard | a24 | White LED | b25,b26,b27 | Breadboard |
+| Breadboard | c27 | Resistor | c30 | Breadboard |
+| Breadboard | d26 | Resistor | d29 | Breadboard |
+| Breadboard | e24 | Resistor | e28 | Breadboard |
 
 ### Image of hardware all connected:
 
