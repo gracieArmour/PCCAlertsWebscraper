@@ -1,19 +1,19 @@
 # PCCAlertsWebscraper
-```A Python/Arduino webscraping project that lights up LEDs based on data from the Portland Community College Alerts system.```
+A Python/Arduino webscraping project that lights up LEDs based on data from the Portland Community College Alerts system.
 
 Jackie Armour, Natalia Creagh, Daniel Maestas
 Winter ENGR114
 3/15/2020
-Arduino Predicts Impending Disaster
+# Arduino Predicts Impending Disaster
 
-Problem Statement:
+## Problem Statement:
 
 Our group was tasked with web scraping the PCC Alert Page to find alerts and present the alert in the form of an LED’s color change. https://alert.pcc.edu/
 
 
 
-Hardware Setup:
-Bill of Materials
+## Hardware Setup:
+### Bill of Materials
 Part Name
 Purpose
 Item Name
@@ -50,10 +50,10 @@ Resistor 10K Ohm 1/6th Watt PTH - 20 pack
 https://www.sparkfun.com/products/11508
 $    0.95
 
-Hardware Schematic
+### Hardware Schematic
 
 
-Hookup Guide
+### Hookup Guide
 Part
 Pin
 Connector
@@ -145,12 +145,13 @@ Resistor
 e28
 Breadboard
 
-Image of hardware all connected:
+### Image of hardware all connected:
 
-Code:
-Python Code
+## Code:
+### Python Code
 webscraper.py
 
+```
 import requests
 
 
@@ -169,7 +170,7 @@ from bs4 import BeautifulSoup
 
 
 
-\# scraper, grabs webpage only
+# scraper, grabs webpage only
 
 
 def scrape(url):
@@ -260,11 +261,11 @@ def scrape(url):
 
 
        return pageStatus, statusText
+```
 
-
-Arduino Code
+### Arduino Code
 MasterProgram.py
-\# import the necessary libraries
+```# import the necessary libraries
 
 
 
@@ -280,7 +281,7 @@ from time import sleep
 
 
 
-\# import the user-defined function files
+# import the user-defined function files
 
 
 import rgb_color
@@ -297,7 +298,7 @@ from statuschecker import status_check
 
 
 
-\# tell the program what website to scrape from
+# tell the program what website to scrape from
 
 
 url_to_check = 'https://alert.pcc.edu/' #'https://jackiearmour.github.io/PCCAlertsWebscraper/'
@@ -308,7 +309,7 @@ url_to_check = 'https://alert.pcc.edu/' #'https://jackiearmour.github.io/PCCAler
 
 
 
-\# store the name of the USB port the Arduino is connected to
+# store the name of the USB port the Arduino is connected to
 
 
 portName = '/dev/cu.usbserial-DN02SJR4'
@@ -319,7 +320,7 @@ portName = '/dev/cu.usbserial-DN02SJR4'
 
 
 
-\# create the board object in Python
+# create the board object in Python
 
 
 board = pyfirmata.Arduino(portName)
@@ -330,7 +331,7 @@ board = pyfirmata.Arduino(portName)
 
 
 
-\# setup the LEDs by storing their locations. d for digital, a for analogue, pin number, o for ouput, i for input, p for pwm
+# setup the LEDs by storing their locations. d for digital, a for analogue, pin number, o for ouput, i for input, p for pwm
 
 
 campusLED = [board.get_pin('d:10:o'),board.get_pin('d:11:o'),board.get_pin('d:12:o')]
@@ -433,16 +434,19 @@ except KeyboardInterrupt:
 
 
    raise
-Results:
+```
+
+## Results:
 The code results in three files with massive functions feeding into one compact file. The arduino code enables the LEDs to light up according to the alert assigned to a color.
 
 
-Future Work:
+## Future Work:
 
 What could another group of students do to build on this project? Any resources this group could use to build this future work?
 
 A future group of students could add more LEDs/colors to indicate a wider range of alerts. This would require a larger or multiple redboards because more pins are needed to connect the hardware.
-License
+
+## License
 MIT License
 
 
