@@ -3,12 +3,10 @@ import pyfirmata
 from time import sleep
 
 # import the user-defined function files
-import rgb_color
-from webscraper import scrape
-from statuschecker import status_check
+import usr_functions
 
 # tell the program what website to scrape from
-url_to_check = 'https://alert.pcc.edu/' #'https://jackiearmour.github.io/PCCAlertsWebscraper/'
+url_to_check = 'https://jackiearmour.github.io/PCCAlertsWebscraper/' #'https://alert.pcc.edu/' 'https://jackiearmour.github.io/PCCAlertsWebscraper/'
 
 # store the name of the USB port the Arduino is connected to
 portName = '/dev/cu.usbserial-DN02SJR4'
@@ -25,27 +23,28 @@ weatherLED = [board.get_pin('d:2:o'),board.get_pin('d:3:o'),board.get_pin('d:4:o
 try:
     while True:
         # scrape the webpage
-        page_status, status_text = scrape(url_to_check)
+        page_status, status_text = usr_functions.scrape(url_to_check)
         
+        # makes sure the webpage was reached before attempting to proccess the alert text
         if page_status=="Page Accessed!":
-            campus_status, alert_status, weather_status = status_check(status_text)
-        else:
+            campus_status, alert_status, weather_status = usr_functions.status_check(status_text) # processes the alert text
+        else: # if page was not reached, set all LEDs to white
             print("No status to process")
             campus_status = 'white'
             alert_status = 'white'
             weather_status = 'white'
         
         # set the LEDs to the determined colors
-        rgb_color.set_led(campusLED,campus_status)
-        rgb_color.set_led(alertLED,alert_status)
-        rgb_color.set_led(weatherLED,weather_status)
+        usr_functions.set_led(campusLED,campus_status)
+        usr_functions.set_led(alertLED,alert_status)
+        usr_functions.set_led(weatherLED,weather_status)
 
         # pause here for 30 seconds before checking again
         sleep(30)
         
 except KeyboardInterrupt:
-    print(rgb_color.led_list)
-    for LED in rgb_color.led_list:
-        rgb_color.set_led(LED)
+    print(usr_functions.led_list)
+    for LED in usr_functions.led_list:
+        usr_functions.set_led(LED)
     print('Program stopped by user')
     raise
