@@ -8,7 +8,7 @@ Winter ENGR114
 
 ## Problem Statement:
 
-Our group was tasked with web scraping the PCC Alert Page to find alerts and present the alert in the form of an LED’s color change. https://alert.pcc.edu/
+Our group was tasked with web scraping the PCC Alert Page to find alerts and present the alert in the form of an LED’s color change. ![https://alert.pcc.edu/](READMEImages/alertpage.png)
 
 
 
