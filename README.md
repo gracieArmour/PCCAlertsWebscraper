@@ -8,7 +8,9 @@ Winter ENGR114
 
 ## Problem Statement:
 
-Our group was tasked with web scraping the PCC Alert Page to find alerts and present the alert in the form of an LED’s color change. ![https://alert.pcc.edu/](READMEImages/alertpage.png)
+Our group was tasked with web scraping the PCC Alert Page to find alerts and present the alert in the form of an LED’s color change.
+
+![https://alert.pcc.edu/](READMEImages/alertpage.png)
 
 
 
@@ -52,6 +54,7 @@ $    0.95
 
 ### Hardware Schematic
 
+![Hardware Schematic](READMEImages/hardwarediagram.png)
 
 ### Hookup Guide
 Part
@@ -146,6 +149,8 @@ e28
 Breadboard
 
 ### Image of hardware all connected:
+
+![Hardware After Hookup](READMEImages/hardwarehookupimage)
 
 ## Code:
 ### Python Code
@@ -439,6 +444,7 @@ except KeyboardInterrupt:
 ## Results:
 The code results in three files with massive functions feeding into one compact file. The arduino code enables the LEDs to light up according to the alert assigned to a color.
 
+![Results](READMEImages/resultsimage.png)
 
 ## Future Work:
 
