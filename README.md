@@ -150,7 +150,7 @@ Breadboard
 
 ### Image of hardware all connected:
 
-![Hardware After Hookup](READMEImages/hardwarehookupimage)
+![Hardware After Hookup](READMEImages/hardwarehookupimage.jpg)
 
 ## Code:
 ### Python Code
@@ -444,7 +444,7 @@ except KeyboardInterrupt:
 ## Results:
 The code results in three files with massive functions feeding into one compact file. The arduino code enables the LEDs to light up according to the alert assigned to a color.
 
-![Results](READMEImages/resultsimage.png)
+![Results](READMEImages/resultsimage.jpg)
 
 ## Future Work:
 
